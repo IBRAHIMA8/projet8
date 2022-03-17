@@ -1,0 +1,15 @@
+<h1>Liste des blogs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Contenu</th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.title %></td>
+    <td><%= blog.content %></td>
+  </tr>
+<% end %>
+</table>

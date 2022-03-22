@@ -1,0 +1,28 @@
+<%= form_with(model: @blog, local: true ,url: choose_new_or_edit ) do |form| %>
+    <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @blog.errors.count %> Il y a quelques erreurs.</h2>
+      <ul>
+
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="blog_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %><br>
+  </div>
+  <br>
+  <div class="blog_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %><br>
+  </div>
+  <br>
+  <%= form.submit %>
+<% end %>
+
+
+<%= link_to "Revenir à l'écran de la liste des blogs", blogs_path %>

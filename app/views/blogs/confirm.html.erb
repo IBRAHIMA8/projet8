@@ -1,0 +1,12 @@
+<h3>Envoyer avec le contenu suivant.</h3>
+
+<%= form_with(model: @blog, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+
+  <p>Titre:<%= @blog.title %></p>
+  <p>Content:<%= @blog.content %></p>
+  <%= form.submit  "Enregistrer" %>
+
+  <%= form.submit "Retourner", name: 'back'  %>
+<% end %>

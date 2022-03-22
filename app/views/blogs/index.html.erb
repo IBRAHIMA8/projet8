@@ -1,5 +1,7 @@
 <h1>Liste des blogs</h1>
 
+<p><%= notice %></p>
+
 <table>
   <tr>
     <th>Title</th>
@@ -10,6 +12,13 @@
   <tr>
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
+    <td><%= link_to 'Vérifiez les détails', blog_path(blog.id) %></td>
+    <td><%= link_to "Modifier le blog", edit_blog_path(blog.id), data: { confirm: 'Voulez vous vraiment le modifier？' } %></td>
+    <td><%= link_to "Supprimer le blog", blog_path(blog.id), method: :delete ,data: { confirm: 'Voulez vous vraiment le supprimer？' } %></td>
   </tr>
+
 <% end %>
+
 </table>
+
+<%= link_to 'Publier un nouveau blog', new_blog_path %>
